@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>quiz1</title>
+<script>
+function myFunction() {
+	alert("Hello, world!");
+}																			// 9번
+
+function myFunction1() {
+	document.write("hello, world");
+}																			// 11번
+</script>
+</head>
+<body>
+
+<h1>My First Web Page</h1>
+<p>My first paragraph.</p>
+<script>
+document.write("5 + 6 은 " + (5 + 6) + "이다.");								// 1번 
+</script>
+
+<!---------------------- 띄어쓰기 -------------------------> <br/><br/>		
+
+<button onclick = "document.write(5+6)">2번</button> <br/>					<!-- 2번 -->
+
+<!---------------------- 띄어쓰기 -------------------------> <br/><br/>	
+
+<script>alert(5+6);
+	// window 객체에 속한 애들이라 원래는 window.alert 로 써야하지만 window는 생략 가능하다 (전역함수)
+</script>																	<!-- 3번 -->
+
+
+<!---------------------- 띄어쓰기 -------------------------> <br/>		
+
+<script>console.log(5+6);
+// 얘도 window 객체에 속한 애라 window.console.log 이어야하나 생략가능
+</script><br/>																<!-- 4번 -->
+
+<!---------------------- 띄어쓰기 -------------------------> <br/>		
+
+<button type = "button" onclick = "window.print()">페이지 프린트</button>		<!-- 5번 -->
+	<!-- 이때 window 써줘야 작동됨, type 어지간하면 써줄것 -->
+
+<!---------------------- 띄어쓰기 -------------------------> <br/><br/>
+
+<div id = "demo1" style = "width:200px;height:100px;background-color:pink;"></div>
+<script>
+	var carName = "volvo";
+	var x = 50;
+	var y = 100;
+	document.getElementById("demo1").innerHTML = x + y;
+	</script>													<!-- 6번 , 7번 -->
+
+<!--------------------- 띄어쓰기 -------------------------> <br/><br/>		
+
+<script>
+var firstName = "John", lastName = "Doe", age = 30;							// 8번
+</script>
+
+<!---------------------- 띄어쓰기 -------------------------> 		
+
+<script>
+	myFunction();														// 10번
+</script>
+
+<!---------------------- 띄어쓰기 -------------------------> <br/>		
+
+<div id = "demo2" style = "width:200px;height:100px;background-color:aliceblue;">
+<script>myFunction1();</script></div>		<!-- 12번 --> 
+
+
+<!---------------------- 띄어쓰기 -------------------------> <br/>		
+
+<script>
+	var age;
+	var voteable = age < 18 ? "too young" : "old enough";					// 13번
+	</script>
+<button onclick = "alert(voteable)")>13번</button>
+</body>
+</html>
+
+<!-- 
+1. 스크립트를 통해 5 + 6의 결과 출력
+2. <p>my first paragraph</p> 밑에 button 만들고 클릭시 5 + 6의 결과를 출력하는 이벤트 리스너를 만들어 처리
+3. alert 함수로 5+6의 결과를 출력 (따로 함수 만들지 X)
+4. console.log(5+6)을 처리하고 F12의 콘솔창에서 살펴보기
+5. 버튼 밑에 클릭 시 print()를 호출하는 button을 만들어 볼것
+6. 변수 carName을 선언하고 초기값은 Volvo로 정의
+	변수 x는 초기값이 숫자 50
+	변수 y는 초기값이 숫자 100
+7. id가 demo1인 엘리먼트의 콘텐츠에 x + y값 출력
+8. 변수 firstName, lastName, age를 한 줄에 선언하고 값은 John, Doe, 30로 한다.
+9. head에 함수 myFunction()을 만들고 블록의 내용은 Hello, world!를 경고창으로 뜨게 함 
+10. body의 script에서 함수 호출
+11. head에 myFunction1()을 만들고 블록의 내용은 Hello, world 반환
+12. body의 script에서 myFunction1()을 호출해 그 값을 id = "demo2"에 출력
+13. 변수 age가 18보다 적으면 too young 아니면 old enough를 반환하는 조건연산자를 만들어 결과를 voteable에 저장하고 이를 alert로 출력
+ -->

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex08-04</title>
+<script>
+function change(obj, size, color) { // obj는 this를 전달 받음
+	obj.style.color = color;
+	obj.style.fontSize = size;
+}
+</script>
+</head>
+<body>
+
+<h3>this 활용</h3>
+<hr/>									<!-- 여기서의 this : 이벤트가 일어나는 객체 -->
+<button type = "button" onclick = "change(this, '30px', 'red')">버튼</button>
+<button type = "button" onclick = "change(this, '30px', 'blue')">버튼</button>
+<!-- form이 아닌 곳에서 클릭 이벤트 처리시 button 주로 사용 -->
+<br/><br/>
+<div onclick = "change(this, '25px', 'orange')">여기 클릭하면 크기와 색 변경</div>
+					<!-- this : 이벤트가 일어나는 객체 / 값들은 이렇게 문자열로 처리해줄 것! -->
+</body>
+</html>

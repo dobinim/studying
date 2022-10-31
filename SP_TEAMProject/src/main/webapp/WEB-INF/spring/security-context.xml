@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans
+	xmlns="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security 
+		http://www.springframework.org/schema/security/spring-security.xsd"
+>
+
+
+	<!-- beans:beans엘리먼트(태그)안에 security설정 엘리먼트(태그) -->
+
+	<!-- 맨 처음 설정 시 TEST용
+	- 테스트 시 작동 잘 되면 아래 작성 후 이 두 줄은 주석 처리 -->
+	<http pattern="/" security="none"></http>
+	<http pattern="/**" security="none"></http> 
+	
+
+	<!-- DB 이용 인증처리 (authentication) -->
+	<authentication-manager>
+		<authentication-provider user-service-ref="customUserDetailsService">
+			<password-encoder ref="passwordEncoder"/>
+		</authentication-provider>
+	</authentication-manager>
+	
+	<!-- user-service-ref="customUserDetailsService"객체를 나타내는 bean -->
+	<!-- 인증처리 클래스. UserDetailsService인터페이스를 구현한 클래스로 개발자가 만듦 -->
+	<beans:bean id="customUserDetailsService" class="com.kim.bproject.security.CustomUserDetailsService"/>
+	
+	<!-- 암호화 된 패스워드 처리 bean -->
+	<beans:bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+	
+
+</beans:beans>

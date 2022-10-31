@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex07-05</title>
+</head>
+<body>
+
+<h3>Date 객체로 현재 시간 알아내기</h3>
+<hr/>
+
+<script>
+let now = new Date();	// 현재 시간 값을 가진 Date 객체 생성
+document.write("현재 시간 : " + now.toUTCString() + "<br/><hr/>");
+//toUTCString()메서드는 Thu, 09 Jun 2022 02:17:41 GMT 형식의 세계 표준시의 문자열을 반환한다.
+//UTC = 세계표준시 (영국 그리니치 천문대 기준 시간)  cf. toLocaleString() : 현재 지역 시간 (한국)
+document.write("현재 시간 : " + now.toLocaleString() + "<br/><hr/>");	// 한국 시간
+document.write(now.getFullYear() + "년도<br/>");	// 4 자리수 연도
+document.write(now.getMonth() + 1 + "월<br/>");  // 월은 0 ~ 11까지라 +1 해줘야 함!
+document.write(now.getDate() + "일<br/>");		// 날짜
+// 시간은 메서드 명이 복수(s)로 됨
+document.write(now.getHours() + "시<br/>");		// 24시간 기준
+document.write(now.getMinutes() + "분<br/>");
+document.write(now.getSeconds() + "초<br/>");
+document.write(now.getMilliseconds() + "밀리초<br/><hr/>");
+
+// 지정된 시각의 Date 객체
+let next = new Date(2023, 7, 15, 12, 12, 12); 	// 7은 8월 (월은 +1)한 값이 출력됨
+document.write("next.toLocaleString() : " + next.toLocaleString() + "<br/>");
+	// 한국식 표기법으로 나옴. 2023. 8. 15.  오후 12:12:12
+</script>
+</body>
+</html>

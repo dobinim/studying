@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mapper문서형식 지정 -->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<!-- mapper 의 namespace : 인터페이스명 -->
+<mapper namespace = "com.kim.SP_MybatisDynamic.dao.IDao">
+	<!-- if문은 JSTL처럼 조건을 test = "비교연산, 논리연산"에 넣어서 사용
+		- sql에서는 = : 비교 연산자 -->
+	<select id = "selectTest1" resultType = "sample.mybatis.TestTable">
+		SELECT * FROM test_table WHERE string_value = 'hoge'
+		<if test = "number_value != null">
+			And number_value = #{numberValue}
+		</if>	<!-- 단일 비교 -->
+	</select>
+	
+	<!-- 다중 조건 처리 -->
+	<!-- JSTL처럼 choose, when, otherwise로 처리 -->
+	<select id = "selectTest2" resultType = "sample.mybatis.TestTable">
+		SELECT * FROM test_table
+		<choose>
+			<when test = "value==null">
+				where value is null
+			</when>
+			<otherwise>
+				where value = #{value}
+			</otherwise>
+		</choose>
+	</select>
+	
+	<!-- where 태그는 내부 엘리먼트가 참일 시 where절을 사용하게 함
+		 단, 안에 있는 AND나 OR은 앞에 존재하는 엘리먼트가 없으면 자동 삭제해서 처리 -->
+	<select id = "selectTest3" resultType = "sample.mybatis.TestTable">
+		SELECT * FROM TEST_TABLE
+		<where>
+			<if test = "string != null">
+				and string = #{string}
+			</if>
+			<if test = "number != null">
+				and number = #{number}
+			</if>
+		</where>
+		<!--  두 조건 모두 참일 경우
+		 → select*from test_table where string = #{string} and number = #{number} -->
+	</select>
+</mapper>

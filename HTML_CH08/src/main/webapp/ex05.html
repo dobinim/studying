@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex08-05</title>
+<script>
+let text = "문서 로딩 줄일 때 readyState = " + document.readyState + "\n"
+</script>
+</head>											<!-- right to left, 즉, 우측 정렬 -->
+<body style = "background-color:yellow; color:blue; direction:rtl;"
+	onload = "printProperties()">
+	<!-- onload는 로딩 완료 이벤트 리스너로 로딩 완료시 발생 / on으로 시작하는건 대부분 이벤트 리스너임! -->
+													
+<h3>document의 주요 프로퍼티</h3>
+<hr/>
+<a href = "http://www.naver.com">네이버 홈페이지</a>
+<div>이곳은 div 영역입니다.</div>
+<input id = "input" type = "text" value = "여기 포커스가 있습니다">
+
+<script>
+function printProperties() {
+	document.getElementById("input").focus();	// <input> 태그에 포커스(커서를 미리 위치시킴)를 부여
+	text += "1. location = " + document.location + "\n";	// 페이지 URL (location 속성)
+	text += "2. URL = " + document.URL + "\n";				// 페이지 URL (URL 속성)
+	text += "3. title = " + document.title + "\n";			// title에 써 준 값
+	text += "4. head의 id = " + document.head.id + "\n";		// head의 id 값 
+	text += "5. body의 color = " + document.body.style.color + "\n";	// body에 지정한 color 값
+	// body와 head는 document에서 속성으로 제공 → so, getElementById() 쓸 필요 없음.
+	text += "6. domain = " + document.domain + "\n";		// URL의 호스트 이름 
+	text += "7. lastModified = " + document.lastModified + "\n"; 	// 마지막으로 수정한 시간
+	text += "8. defaultView = " + document.defaultView + "\n";		// 기본창의 객체 [object Window] 
+	text += "9. 문서의 로드 완료 후 readyState = " + document.readyState + "\n";
+	text += "10. referrer = " + document.referrer + "\n";			
+	text += "11. activeElement = " + document.activeElement.value + "\n";	
+	// focus가 위치한 엘리먼트의 내용 
+	text += "12. documentElement의 태그 이름 = " + document.documentElement.tagName + "\n";
+	// root엘리먼트인 HTML을 가짐
+	
+	alert(text);
+}
+</script>
+</body>
+</html>

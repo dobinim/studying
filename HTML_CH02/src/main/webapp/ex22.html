@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex02-22</title>
+</head>
+<body>
+
+<h3>2개의 &lt; iframe &gt;을 가집니다.</h3>
+<hr/>
+
+<iframe src = "ex01.html" width = "200" height = "150" style = "border : 1px solid red;">
+<!-- style = "border: 1 px solid red;" 부분을 통해 좀 더 시각적으로 확실히 구분해줌! -->
+브라우저가 구형이어서 iframe을 지원 못하네요 (지원할 경우 이 부분 실행 X )
+</iframe>
+<iframe src = "ex02.html" width = "200" height = "100">
+브라우저가 구형이어서 iframe을 지원 못하네요
+</iframe>
+<br/><br/>
+<h3>외부 사이트를 iframe에서 사용</h3>
+<!-- 외부 사이트를 iframe에서 사용 시 상대방이 거절하도록 설정해 놓았으면 사용할 수 X -->
+<iframe src = "http://www.etnews.com" name = "upper" width = "300" height = "300"></iframe>
+<iframe src = "http://www.mk.co.kr" name = "lower" width = "300" height = "300"></iframe>
+</body>
+</html>

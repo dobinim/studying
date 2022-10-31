@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex09-20</title>
+<script>
+function whatKeyDown(e) {
+	let str = "";
+	let div = document.getElementById("div");
+	div.innerHTML = ""; 	// div 객체 내용 초기화
+	str += "e.key = " + e.key + "<br/>";	// 문자값
+	str += "e.code = " + e.code + "<br/>";	// 키 부호값
+	div.innerHTML = str;	// div 객체에 HTML 문자열 출력
+}
+
+</script>
+</head>
+<body>
+
+<h3>키 리스너와 키 이벤트 객체의 프로퍼티</h3>
+<hr/>
+텍스트 창에 키를 눌러 보세요. Alt, Shift, Ctrl 키도 가능합니다.<br/>
+<input type = "text" id = "text" onkeydown = "whatKeyDown(event)">
+<!-- 모든 키를 누를 때 발생하는 이벤트리스너 -->
+<div id = "div" style = "background-color:skyblue; width:250px; height:50px">
+</div>
+</body>
+</html>

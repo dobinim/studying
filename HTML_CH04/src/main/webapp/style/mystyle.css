@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+body { 	/* selector로 body 태그에 적용 */
+	background-color: linen; /* 배경색 */
+	color : blueviolet; /* 글자색 */
+	margin-left : 30px; /* 왼쪽 외부 여백 */
+	margin-right : 30px; /* 오른쪽 외부 여백 */
+}
+
+h3 { /* 이 예제처럼 h3가 2 파트인 경우 2 파트 모두 적용됨 */
+	text-align : center; /* 문자열 정렬 : 가운데 정렬 */
+	color : darkred; /* body의 color와 중첩되나 cascading에 의해 자식인 자기의 색으로 변경 */
+}

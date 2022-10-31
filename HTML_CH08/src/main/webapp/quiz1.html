@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>quiz1</title>
+<script>
+</script>
+</head>
+<body>
+
+<h3>QUIZ1</h3>
+<hr/>
+
+<p id = "p1"></p>
+<p id = "p2"></p>
+<p id = "p3"></p>
+<p id = "p4"></p>
+<p id = "p5"></p>
+<p id = "p6"></p>
+<p id = "p7"></p>
+<p id = "p8"></p>
+<p id = "p9"></p>
+
+<script>
+let d = new Date();											// 지역 시간
+document.getElementById("p1").innerHTML = "현재 시간 : " + d.toLocaleString() + "<br/>";   // 1번
+document.getElementById("p2").innerHTML = "현재 연도 : " + d.getFullYear() + "<br/>";		// 2번
+document.getElementById("p3").innerHTML = "현재 월 : " + d.getMonth() + 1 + "<br/>";		// 3번
+															// getMonth()는 0~11까지 나오므로 꼭 +1 해줄것!
+document.getElementById("p4").innerHTML = "현재 시간 : " + d.getHours() + "<br/>";			// 4번
+
+let msec = Date.parse("2022-03-25");	
+// Date.parse("시각") : 시간 차이를 계산하는 메서드 (posix 타입 - 1970.1.1 0시 0분 0초부터의 경과한 밀리세컨드를 계산)
+document.getElementById("p5").innerHTML = "msec : " + msec + "<br/>";					// 5번
+
+let fruits = ["Banana", "Orange", "Apple", "Kiwi"];
+document.getElementById("p6").innerHTML = " Fruits : " + fruits.sort() + "<br/>";		// 6번
+// sort() 시에는 자신도 정립되어 있음
+
+document.getElementById("p7").innerHTML = "Fruits의 원소 개수는 : " + fruits.length + " 개 <br/>";	// 7번
+
+
+
+/* 내 답
+ 
+function Fullname (fName, lName, id) {
+	this.fName = fName;
+	this.lName = lName;
+	this.id = id;
+	this.fullName = function () {
+		return this.fName + " " + this.lName;
+	}
+}
+
+let person = new Fullname ("james","bond", 007); */
+
+// 객체형 변수로 맹그는 법! 꼭 기억해두기 ★★★★★
+let person = {
+		fName : "james",	// 자바의 멤버 변수! 
+		lName : "bond",		// 속성 : 속성값 (java에서 map의 key : value 랑 비슷함!)
+		id : "007",
+		
+		fullName : function() {		// 자바의 메서드!
+			return this.fName + this.lName;
+		}
+}
+
+document.getElementById("p8").innerHTML = person.fName + "<br/>";
+document.getElementById("p9").innerHTML = person.fullName();
+
+</script>
+</body>
+</html>
+
+<!-- 
+
+1. 현재 시각 정보를 지닌 객체 d를 만들고 id = "p1"에 출력
+2. d에서 연도를 얻어서 p2에 출력
+3. d에서 월을 얻어서 p3에 출력
+4. d에서 시간을 얻어서 p4에 출력
+5. let msec = Date.parse("2022-03-25");를 사용해 p5에 출력
+6. "Banana", "Orange", "Apple", "Kiwi"를 원소값으로 갖는 배열 fruits를 만들고 오름차순으로 정렬하여 p6에 출력 
+7. Fruits의 원소 개수를 p7에 출력 
+8. 객체형 변수 person을 만드는데 속성은 fName, lName, id이며 값은 임의로 집어 넣는다.
+	메서드는 fullName이며 블록의 내용은 fName과 lName을 결합한 값을 반환한다.
+	만든 후 fName을 p8에 출력하고 메서드를 호출한 값을 p9에 출력.
+ -->

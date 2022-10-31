@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex06-02</title>
+<!-- script 태그 엘리먼트를 이용해 js를 만듬. -->
+<script>
+function over (obj) {
+	// 는 주석 처리, js의 함수는 function 함수 이름 (파라메터명) 으로 수행
+	obj.src = "media/banana.png";
+}
+
+function out (obj) {
+	obj.src = "media/apple.png";
+}
+</script>
+</head>
+<body>
+
+<h3>마우스 올려 보세요</h3>
+<hr/>
+										<!-- over(), out() 형태 → 자바스크립트를 호출하는 것 (함수형태로) -->
+<img src = "media/apple.png" alt = "이미지" onmouseover = "over(this)" onmouseout = "out(this)"/>
+
+</body>
+</html>

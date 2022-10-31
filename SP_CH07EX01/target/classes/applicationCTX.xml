@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/task 
+		http://www.springframework.org/schema/task/spring-task-3.1.xsd">
+
+	<context:annotation-config/> <!-- Bean 에서 어노테이션(@)을 사용해 만들 시 -->
+	<bean id = "student" class = "com.kim.ex0701.Student">
+		<constructor-arg value = "홍길순"/>
+		<constructor-arg value = "30"/>
+	</bean>
+	<bean id = "otherstudent" class = "com.kim.ex0701.OtherStudent">
+		<constructor-arg>
+			<value>홍길자</value>
+		</constructor-arg>
+		<constructor-arg>
+			<value>50</value>
+		</constructor-arg>
+	</bean>
+</beans>

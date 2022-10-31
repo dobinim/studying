@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex07-09</title>
+<script>
+/* 메서드로 사용할 3개의 함수 작성 */
+function inquiry() {			// 잔액조회
+	return this.balance;		// this : 이 함수의 주인인 객체
+}
+
+function deposit(money) {		// 입금처리
+	this.balance += money;
+}
+
+function withdraw(money) {		// 출금
+	this.balance -= money;
+	return money;
+}
+
+//사용자 객체 만들기
+let account = new Object();		// js에서 최상위 객체인 코어객체 Object의 생성자를 이용, account는 객체형임
+account.owner = "황기태";			// 계좌 주인 프로퍼티 owner 속성 생성 및 초기화
+account.code = "111";			// 코드 프로퍼티 생성 및 초기화
+account.balance = 35000; 		// 잔액 프로퍼티 생성 및 초기화
+
+// 함수들을 accountr 객체의 메서드로 등록ㅎ
+account.inquiry = inquiry;		// 메서드 작성
+account.deposit = deposit;		// 메서드 작성
+account.withdraw = withdraw;	// 메서드 작성
+
+// account 객체의 속성 및 메서드가 등록되어 완성
+</script>
+</head>
+<body>
+
+<h3>new Object()로 사용자 객체 만들기</h3>
+<hr/>
+<script>
+// 만들어진 account 객체 사용
+document.write("account : ");
+document.write(account.owner + ", ");
+document.write(account.code + ", ");
+document.write(account.balance + "<br/>");
+
+// account의 메서드 사용
+account.deposit(10000);			// 10000원 저금
+document.write("10000원 저금 후 잔액은 " + account.inquiry() + "<br/>");
+account.withdraw(5000);
+document.write("5000원 인출 후 잔액은 " + account.inquiry() + "<br/>");
+</script>
+</body>
+</html>

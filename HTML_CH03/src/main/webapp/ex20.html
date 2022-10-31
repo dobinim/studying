@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex03-20</title>
+</head>
+<body>
+
+<h3>type = "file"</h3>
+<hr/>
+
+<!-- 하나의 파일만 업로드 -->
+<form action = "#" method = "post" name = "fo" enctype=“multipart/form-data”>
+	<label for = "myfile">select a file:</label>
+	<input type = "file" name = "myfile" id = "myfile"/><br/><br/>
+	<input type = "submit">	
+</form>
+
+<br/><br/><br/>
+<!-- 여러 개의 파일을 업로드 -->
+<form action = "#" method = "post" name = "fo1" enctype = "multipart/form-data">
+	<label for = "myfile1">select multiple files:</label>
+	<input type = "file" name = "myfile1" id = "myfile1" multiple/><br/><br/>
+	<input type = "submit">
+		<!-- 복수의 파일 선택 시 ctrl 키를 누르고 선택 -->
+</form>
+</body>
+</html>

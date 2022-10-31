@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex03-quiz1</title>
+</head>
+<body>
+
+<h3>Quiz 1</h3>
+<hr/>
+						<!-- post로 전송 시 모든 내용이 블록처리 되어 보이지 X → get은 입력한 내용 주소창에 다 뜸 -->
+<form action = "#" method = "post" name = "fo"> <!-- 1번 -->
+	이름 : <input type = "text" name = "name" maxlength = "8" value = "kook"/> <!-- 2번 -->
+								<!-- name의 이 요소 이름을 변수처럼 처리해 서버로 보냄 -->
+	비밀번호 : <input type = "password" name = "pw" value = ""/> <!-- 3번 -->
+
+<h3> 도시 </h3> <!-- 4번 -->
+<hr/>
+	
+	도시 : <input type = "text" name = "city" list ="cities"/><br/>
+		<datalist id = "cities"> 
+		<option value = "서울"></option>
+		<option value = "부산"></option>
+		<option value = "광주"></option>
+		</datalist>
+<br/>
+	
+<h3> 취미 </h3> <!-- 5번 -->
+<hr/>
+	
+	독서<input type = "checkbox" name = "hobby" value = "1"/>
+	조깅<input type = "checkbox" name = "hobby" value = "2"/>
+	영화<input type = "checkbox" name = "hobby" value = "3"/>
+	음악<input type = "checkbox" name = "hobby" value = "4"/>
+<br/><br/>
+
+<h3> 도시 </h3> <!-- 6번 -->
+<hr/>
+<!-- radio는 꼭 그 그룹끼리 같은 name으로 묶여야 함! 그래야 배타적 처리 OK -->
+	한국<input type = "radio" name = "country" value = "1"/>
+	미국<input type = "radio" name = "country" value = "2"/>
+	일본<input type = "radio" name = "country" value = "3"/>
+	중국<input type = "radio" name = "country" value = "4"/>
+<br/><br/>
+
+<h3> 서버 전송 및 취소 버튼 </h3> <!-- 7번 및 8번 -->
+<hr/>
+												
+	전송 : <input type = "submit" value = "전송"/>	 
+		  <button type = "submit"><image src = "media/button.png"></button>
+		  <input type = "image" src = "media/button.png" alt = "전송 버튼"/>
+		  &nbsp; &nbsp; 	  <!-- &nbsp; 는 공백 엔터티임! -->
+	취소 : <input type = "reset" value ="취소" />
+		  <button type = "reset"><image src = "media/button.png"></button>
+		  <input type = "image" src = "media/button.png" alt = "취소 버튼"/>
+	<!-- submit과 reset은 button 식으로 만들어도 OK -->
+
+ <br/><br/>
+
+<h3> textarea 만들기</h3> <!-- 추가 문제 -->
+<hr/>
+자기소개서 : <textarea name = "profile" cols = "100" rows = "20">자기소개서를 작성하세요.</textarea>
+<!-- 이렇게 만들면 우선 아래선에 맞추어서 나옴  -->
+
+
+
+</form>
+</body>
+</html>
+
+
+<!-- 
+1. form 컨테이너를 필요속성을 포함해 만들어라.
+2. form 내에 한줄 문자열 입력창의 요소 이름을 name으로 하고 초기값은 kook으로, 
+최대 문자입력 개수는 8로 한다
+3. 비번 입력창을 name 속성을 pw로 해서 만들어라.
+4. type text 창과 list가 결합된 창을 만들고 선택 내용은 서울, 부산, 광주로 한다.
+5. 독서, 조깅, 영화, 음악을 다중 선택 가능하도록 한다.
+6. 한국, 미국, 일본, 중국 중에 배타적 선택이 되도록 창을 만든다.
+7. 입력한 값을 서버로 전송하는 버튼을 만든다.
+8. 입력 내용을 취소하는 버튼을 만든다.
+
+추가문제 ) textarea 만들기
+ -->

@@ -1,0 +1,133 @@
+<!-- # 복습할 때 TIP ! CTRL + H 쓰면 전체 파일에서 원하는 키워드를 검색 가능!
+		해당 프로젝트에서만 찾을 떄 → project explorer에서 해당 프로젝트 클릭 후 CTRL + H 입력 해
+		selected ~~~ 클릭!  -->
+
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>quiz1</title>
+</head>
+<body>
+
+<form action = "#" method = "post" name = "fo">
+<h3>1번 문제 </h3>
+<hr/>
+
+	<label for = "html">
+		<input type = "radio" id = "html" value = "1"/>HTML
+	</label> <br/>
+	<label for = "css">
+		<input type = "radio" id = "css" value = "2"/>CSS
+	</label> <br/>
+	<label for = "javascript">
+		<input type = "radio" id = "javascript" value = "3"/>Javascript
+	</label> 
+	
+	
+<br/><br/>
+
+
+<h3>2번 문제</h3>
+<hr/>
+
+<select name="cities" multiple size = "5"> 
+	<option value = "1">서울</option> 
+	<option value = "2" selected>부산</option> 
+	<option value = "3">광주</option>
+	<option value = "4">제주</option>
+	<option value = "5">대구</option>
+</select>
+
+<br/><br/>
+
+
+<h3>3번 문제</h3>
+<hr/>
+
+스핀버튼 생성되는 폼 <input type = "number" min = "10.0" max = "50.0" step = "2"/>
+
+<br/><br/>
+
+
+<h3>4번 문제</h3>
+<hr/>
+
+슬라이드바 만들기 0<input type = "range" min = "0" max = "100" list = "bar"/>100
+
+<br/><br/>
+
+</form>
+
+<h3>5번 문제</h3>
+<hr/>
+
+<form action = "#" method = "post" name = "fo1" enctype = "multipart/form-data">
+	<label for = "myfile">여러 개 파일 업로드</label>
+	<input type = "file" name = "myfile" id = "myfile" multiple/><br/><br/>
+	<!--  <input type = "submit"> -->
+	
+<br/><br/>
+
+
+<h3>6번 문제</h3>
+<hr/>
+	오늘 날짜: <input type = "date" value = "2022-06-01"/>
+	
+<br/><br/>
+
+
+<h3>7번 문제</h3>
+<hr/>
+	hidden을 이용한 입력창 <input type = "hidden" name = "custID" value = "3487"/>
+	
+	
+<br/><br/>
+
+
+<h3>8번 문제</h3>
+<hr/>
+	E-mail : <input type = "email" name = "mail" placeholder = "id@host"/>
+
+<br/><br/>
+
+
+<h3>9번 문제</h3>
+<hr/>
+	이름 : <input type ="text" name = "name1" placeholder = "이름을 입력하세요." />
+	
+	
+<br/><br/>
+
+
+<h3>10번 문제 ~ 13번 문제</h3>
+10번 : <input type ="text" name = "name10" placeholder = "이름을 입력하세요." readonly /><br/>
+11번 : <input type ="text" name = "name11" placeholder = "이름을 입력하세요." disabled /><br/>
+12번 : <input type ="text" name = "name12" placeholder = "이름을 입력하세요." required /><br/>
+
+13-1번 : <input type ="text" name = "name131" placeholder = "이름을 입력하세요." /><br/>
+13-2번 : <input type ="text" name = "name132" placeholder = "이름을 입력하세요." autofocus /><br/>
+	
+
+</form>
+</body>
+</html>
+
+
+<!--    
+1. label 태그의 입력 태그 요소를 분리하여 캡션을 적용하라.
+	input 태그는 radio이며 3개의 radio를 갖는다.
+	캡션은 각각 HTML, CSS, Javascript이다.
+2. 콤보박스를 만드는데 항목은 서울, 부산, 광주, 제주, 대구로 하고 사전 선택은 부산이며 여러개 선택되도록 한다.
+3. 스핀버튼이 생성되는 type가 number인 최소 10 ~ 최대 50까지, 간격은 2씩 증가하는 폼 만들기.
+4. 크기가 0부터 100인 슬라이드 바를 만들어 본다
+5. file 업로드를 위한 입력창을 만들고 복수 선택이 가능하게 한다.
+6. date를 처리하는 입력창을 만들며, 초기값은 오늘 날짜로 한다.
+7. type = "hidden"인 입력창을 name = "custID" value = "3487"을 이용해 만든다.
+8. 이메일을 입력하는데 사용되는 입력창 만들기 
+9. 한줄 문자입력창을 만들고 힌트로 이름을 입력하세요를 넣는다.
+10. 한줄 문자입력창을 만들고 힌트로 이름을 입력하세요를 넣고 readonly 속성을 사용하라.
+11. 한줄 문자입력창을 만들고 힌트로 이름을 입력하세요를 넣고 disabled 속성을 사용하라.
+12. 한줄 문자입력창을 만들고 힌트로 이름을 입력하세요를 넣고 required 속성을 사용하라.
+13. 한줄 문자입력창을 2개 만들고 힌트로 이름을 입력하세요를 넣고 둘 중 하나에 autofocus 속성을 사용하라.
+ -->

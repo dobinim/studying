@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex03-18</title>
+</head>
+<body>
+
+<h3>회원 정보를 입력해주세요.</h3>
+<hr/>
+<form action = "#" name = "fo" method = "post">
+	이름 : <input type = "text" value = "ㅇㅇㅇ"/><br/>
+	<!-- placeholder가 아닌 value로 했을 경우 일일이 지워줘야 하는 번거로움이 있다
+		placeholder → 지우지 않고 바로 입력 가능 (자동으로 기본값이 지워짐)
+		value → 지우고 입력해야 함 (기본값) 							 -->
+	email : <input type = "email" placeholder = "id@host"/><br/>
+	홈페이지 : <input type = "url" placeholder = "http://"/><br/>
+	전화번호 : <input type = "tel" placeholder = "010-1234-5678"/><br/> <!-- 아직은 체크 못함 -->
+	검색어 : <input type = "search" placeholder = "검색어"><br/> <!-- 아직은 구현 안됨. type = "text" --> 
+	<input type = "submit" value = "전송"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans
+	xmlns = "http://www.springframework.org/schema/beans"
+	xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 기본형인 double형의 변수 값 설정 -->
+	<bean id = "bmiCalculator" class = "com.kim.ex0401.BMICalculator">
+		<property name="lowWeight">
+			<value>18.5</value>
+		</property>
+		<property name="normal">
+			<value>23</value>
+		</property>
+		<property name="overWeight">
+			<value>25</value>
+		</property>
+		<property name="obesity" value = "30"/>
+		<!-- property에 value 값 부여하는 방법은 2가지! 아무거나 써도 상관없음
+			- property 시작태그 - 종료태그 사이에 value 태그 넣기 (이때 "" 사용 X)
+			- property 태그 안에 value 속성 같이 쓰기 (이땐 값이므로 "" 필수!!)    -->
+	</bean>
+
+
+	<bean id = "myInfo" class = "com.kim.ex0401.MyInfo">
+		<!-- String은 기본형이 아니지만 "기본형처럼" 처리 -->
+		<property name = "name" value = "홍길동"/>
+		<property name = "height" value = "187"/>
+		<property name = "weight" value = "84"/>
+		<!-- 배열, list형은 ref 사용 X → list 속성 사용 -->
+		<property name = "hobbys">
+			<list>
+				<value>수영</value>
+				<value>독서</value>
+				<value>요리</value>
+			</list>
+		</property>
+		<!-- 객체형이니까 ref 사용 -->
+		<property name = "bmiCalculator">
+			<ref bean = "bmiCalculator"></ref> <!-- xml의 해당 bean id 입력 -->
+		</property>
+	</bean>
+</beans>

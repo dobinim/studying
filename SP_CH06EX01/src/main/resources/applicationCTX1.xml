@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 생성자를 이용한 멤버변수 설정 시 사용하는 c: namespace 사용 -->
+<!-- setter를 이용한 멤버변수 설정 시 사용하는 p: namespace 사용 -->
+<!-- beans에 namespace 추가 : 밑의 Namespace 클릭 → c와 p 체크하고 저장하면 자동 생성됨. -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id = "student3" class = "com.kim.ex0601.Student">
+		<constructor-arg value = "홍길자"/>
+		<constructor-arg value = "8"/>
+		<constructor-arg>
+			<list>
+				<value>줄넘기</value>
+				<value>공놀이</value>
+			</list>
+		</constructor-arg>
+		<property name = "height">
+			<value>126</value>
+		</property>
+		<property name = "weight" value = "21"/>
+	</bean>
+
+	<!-- c:와 p:namespace
+		- 생성자에 있는 변수는 c:namespace / 생성자에 없는 변수는 p:namespace 사용 -->
+	<bean id = "family" class = "com.kim.ex0601.Family" c:papaName="홍아빠" c:mamaName="홍엄마"
+			p:sisterName = "홍누나">
+		<property name = "brotherName" value = "홍형"/> 
+		<!-- 이렇게 property 랑 섞어서 써도 OK -->
+	</bean>
+</beans>

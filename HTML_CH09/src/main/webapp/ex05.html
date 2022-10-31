@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex09-05</title>
+</head>
+<body>
+
+<h3>event객체</h3>
+<hr/>
+
+<p id = "p">마우스를 올려 보세요.</p>
+<button onclick = "f(event)">클릭하세요</button>
+<!-- event는 객체명이 event로 js에서 제공하는 객체. → window 객체에 속하는 객체
+	이름 바꾸면 안됨! -->
+<script>
+function f(e) {		// 함수가 이벤트용 함수일 때 e는 event 객체를 받는 파라메터
+	alert(e.type);		// 이벤트 종류 출력
+}
+document.getElementById("p").onmouseover = f;	
+										// DOM의 이벤트 리스너 속성으로 사용 시 "함수 이름만" 사용
+</script>
+</body>
+</html>

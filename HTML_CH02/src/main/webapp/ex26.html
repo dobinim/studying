@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex02-26</title>
+</head>
+<body>
+
+<h3>오디오 삽입</h3>
+<hr/>
+재생 버튼을 누르면 음악이 연주됩니다.
+<p><!-- 현재는 audio, video로만 사용하는 것을 권장! -->
+	<audio src = "media/EmbraceableYou.mp3" controls loop>
+	브라우저가 audio 태그를 지원하지 않습니다.
+	</audio>
+</p>
+<!-- embed와 object는 비표준 시 사용하나 현재는 권고 X -->
+<embed type = "video/mp4" src = "media/bear.mp4" width = "320" height = "240">
+&lt;- embed로 작업한 것(현재 권고X)<br/>
+<br/>
+<object data = "media/bear.mp4" width = "320" height = "240"></object>
+&lt;- object로 작업한 것(현재 권고X)<br/>
+</body>
+</html>

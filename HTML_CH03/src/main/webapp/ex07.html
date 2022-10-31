@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex03-07</title>
+
+<style>	/* css를 통해 칸의 크기를 더 늘려줄 수 있음. */
+input {
+	padding : 10px;
+}
+</style>
+</head>
+<body>
+
+<h3>가보고 싶은 곳</h3>
+<hr/>
+
+<form action = "#" method = "POST" name = "fo">
+	나라 : <input type = "text" name = "country" list ="countries"/><br/>
+		<datalist id = "countries"> <!-- list와 datalist의 id를 일치시켜 주어라! -->
+		<!-- datalist의 각 항목은 option 태그 사용 -->
+		<option value = "가나"></option>
+		<option value = "스위스">
+		<option value = "브라질">
+		</datalist>
+		<br/><br/>
+								<!-- name이 위의 것과 중복되면 X -->
+	보고싶은 곳 : <input type = "text" name = "wanttosee" list ="what"/><br/>
+		<datalist id = "what"> <!-- list와 datalist의 id를 일치시켜 주어라! -->
+		<!-- datalist의 각 항목은 option 태그 사용 -->
+		<option value = "산"></option>
+		<option value = "바다">
+		<option value = "도시">
+		</datalist>
+</form>
+</body>
+</html>

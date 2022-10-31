@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex06-15</title>
+</head>
+<body>
+
+<h3>if-else를 이용한 학점 매기기</h3>
+<hr/>
+<script>
+let grade;
+let score = prompt("황기태님 점수를 입력하세요", 100);	
+// dialog(알림창)뜨게 하는 명령어. "황기태님 점수를 입력하세요"가 있고 100이 랜덤으로 입력창에 입력되어 있음.
+score = parseInt(score);		// parseInt → 문자열을 숫자로 바꿈
+if(score >= 90) {	// score가 90 이상이라면
+	grade = "A";
+} else if (score >= 80) {	// score가 80 이상이라면 → 이미 90 미만이라는 걸 안 뒤이므로 따로 상한 두지 X
+	grade = "B";
+} else if (score >= 70) {	// score가 70 이상이라면
+	grade = "C";
+} else if (score >= 60) {	// score가 60 이상이라면
+	grade = "D";
+} else {					// 그 밑이라면 
+	grade = "F";
+}
+document.write(score + "는 " + grade + " 입니다.<br/>");
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex09-03</title>
+<script>
+let p;
+function init() {
+	p = document.getElementById("p");
+	p.addEventListener("mouseover", over);			// over → 함수의 이름, js에서는 함수도 변수(객체)로 처리한다.
+	p.addEventListener("mouseout", out /*, false*/);
+		// over 함수와 out 함수를 eventlistener에 추가하라! (이벤트를 발생하게 하라)
+	// addEventListener("이벤트종류", 함수명, useCapture)
+	// useCapture는 디폴트가 false로 버블 방식이고, true는 capture 방식
+	// 함수 이름대신 그 자리에 익명의 함수 function() {p.style.backgrondColor = "orchid";} 해도 됨
+}
+
+function over() {
+	p.style.backgroundColor = "orchid";
+}
+function out() {
+	p.style.backgroundColor = "white";
+}
+</script>
+</head>
+<body onload = "init()">
+
+<h3>addEventListener()를 이용한 리스너 등록</h3>
+<hr/>
+<p id = "p">마우스 올리면 orchid 색으로 변경</p>
+</body>
+</html>

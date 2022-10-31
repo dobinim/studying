@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex07-06</title>
+</head>
+<body>
+
+<h3>페이지 방문 초시간이 짝수이면 #D2D2FF, 홀수이면 #91B9F5 배경 </h3>
+<hr/>
+
+<script>
+let current = new Date();	// 현재 시간 값을 가진 Date 객체 생성
+if(current.getSeconds() % 2 == 0) {	// getSeconds()는 초를 숫자로 반환. 즉, 초가 짝수일 때 
+	document.body.style.backgroundColor = "#D2D2FF";
+	// HTML DOM 객체 (document 객체) 중 태그 이름 body는 객체 이름 body로 제공
+	// js의 style 속성은 css 속성을 나타내는 속성
+	// backgroundColor는 css의 background-color 속성을 나타내는 js 속성 (js의 이름 붙이기 규칙을 따름)
+} else {
+	document.body.style.backgroundColor = "#91B9F5";
+}
+
+document.write("현재 시간 : ");
+document.write(current.getHours(), " 시, ");
+document.write(current.getMinutes(), " 분, ");
+document.write(current.getSeconds(), "초<br/>");
+
+</script>
+</body>
+</html>

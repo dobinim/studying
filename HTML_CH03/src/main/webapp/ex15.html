@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex03-15</title>
+</head>
+<body>
+
+<h3>시간 정보 입력 HTML5 폼 요소들</h3>
+초기 세팅 : 2022년 3월 1일 밤 9시 30분(10초 32)<br/>
+시간을 변경해 보세요
+<hr/>
+
+<form action = "#" method = "post" name = "Fo">
+	month : <input type = "month" value = "2022-03"/><br/>
+	<!-- 창에는 2022년 03월로 표시됨, 값은 value의 값 -->
+	week : <input type = "week" value = "2022-W09"/><br/>
+	<!-- 창에는 2022년 09번째 주로 표시됨, 값은 value의 값 -->
+	date : <input type = "date" value = "2022-03-01"/><br/>
+	<!-- 창에 표시된 것과 값은 모두 value 값  -->
+	time : <input type = "time" value = "21:30"/><br/>
+	<!-- 창에는 오후 9시 30분으로 표시됨, 값은 value의 값 -->
+	local : <input type = "datetime-local" value = "2022-09-01T21:30:10.32"/><br/>
+	<!-- 창에는 날짜는 date, 시간은 time 방식을 적용, 값은 value의 값 -->
+	<!-- value 초기값을 줄 때에만 표기 방식을 알면 되고, 선택 시에는 제공되는 캘린더를 활용하면 됨  -->
+</form>
+
+<br/><br/>
+
+<h3>생일 축하합니다</h3>
+<hr/>
+당신의 생일은 2003년 2월 9일입니다. 틀리면 수정하시고 
+파티 사진과 장소를 입력하세요.
+<hr/>
+<form action = "#" method = "post" name = "Fo">
+
+<table> <!-- table 의 컬럼(셀)에 문자 외의 입력 요소를 나타내는 다른 엘리먼트를 입력 가능 -->
+	<tr>
+		<td>생일</td>
+		<td><input type = "date" value = "2003-02-09"></td>
+	</tr>
+	<tr>
+		<td>생일파티시간</td>
+		<td><input type = "time"></td>
+	</tr>
+	<tr> 
+		<td>생일파티장소</td>
+		<td><input type = "text"></td>
+	</tr>
+</table>
+</form>  
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex07-07</title>
+</head>
+<body>
+
+<h3>String 객체의 메서드 활용</h3>
+<hr/>
+
+<script>
+// let a = new String("Boys and Girls");	비 권고
+let a = "Boys and Girls";	// 권고
+let b = "!!";
+document.write("a : " + a + "<br/>");
+document.write("b : " + b + "<br/><br/>");
+
+// String 코어 객체의 메서드들 
+document.write(a.charAt(0) + "<br/>"); 	// charAt(색인번호)는 색인번호의 문자를 반환
+document.write(a.concat(b, "입니다") + "<br/>");	// concat(문자열, 문자열...)은 문자열 결합 발환
+document.write(a.indexOf("s") + "<br/>"); // indexOf("문자열")은 해당 문자열이 처음 나오는 색인번호 반환
+document.write(a.indexOf("And") + "<br/>"); // 대소문자를 구분해줘야 함. 없으면 -1 나옴
+document.write(a.indexOf("and") + "<br/>");
+document.write(a.slice(5, 8) + "<br/>"); 	// slice(start 색인번호,end 색인번호) 색인번호 start부터 end -1까지의 문자열 반환
+document.write(a.substr(5, 3) + "<br/>");	// substr(start, 개수)는 start 색인번호부터 개수만큼 반환
+document.write(a.toUpperCase() + "<br/>");  // toUpperCase() 는 대문자로 바꾸어 반환
+document.write(a.replace("and", "or") + "<br/>"); // replace(문자열1, 문자열2)은 문자열1을 문자열2로 바꾸어 반환
+document.write("  kitae  ".trim() + "<br/><hr/>");	// trim()은 앞뒤의 공백을 제거하여 반환
+
+let sub = a.split(" ");
+document.write("a를 빈칸으로 분리하여 배열로 반환<br/>");
+for (let i = 0; i < sub.length ; i++){
+	document.write("sub" + i + " = " + sub[i] + "<br/>");
+}
+
+document.write("<hr/>String 메서드를 실행 후 a와 b 변함없음<br/>");
+// String은 자바처럼 immutable (변경 불가능) 객체이므로 자신은 변경되지 않음
+document.write("a : " + a + "<br/>");
+document.write("b : " + b + "<br/>");
+
+</script>
+</body>
+</html>

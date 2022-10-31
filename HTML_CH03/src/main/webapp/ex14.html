@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex03-14</title>
+</head>
+<body>
+
+<h3>컬러다이얼로그로 색 입력</h3>
+<hr/>
+<!-- type = "color" 입력요소는 컬러 다이얼로그를 제공 -->
+<!-- type = "color" 창을 클릭하여 색을 선택하면 change 이벤트가 발생한다 -->
+<form action = "#" name = "fo" method = "post">
+	색 선택 : <input type = "color" name = "mycolor" value = "#00BFFF" 
+		onchange = "document.body.style.color=this.value"/>
+		<!-- 현재 이벤트가 일어난 입력 요소 -->
+</form>
+</body>
+</html>

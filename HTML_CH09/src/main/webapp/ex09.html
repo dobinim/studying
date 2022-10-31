@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex09-09</title>
+<script>
+function calculate () {
+	let exp = document.getElementById("exp");
+	let result = document.getElementById("result");
+	result.value = eval(exp.value);
+	// id가 exp인 input창에 수식 형식을 입력하고, id가 result인 창의 값 value에 수식 계산값을 대입
+}
+</script>
+</head>
+<body>
+
+<h3>마우스이벤트 중 click이벤트로 계산기 만들기</h3>
+<hr/>
+
+계산하고자 하는 수식을 입력하고 계산 버튼을 누르세요.
+<br/><br/>
+
+<form>
+식 : <input type = "text" id = "exp" value = ""><br/>
+값 : <input type = "text" id = "result">
+<input type = "button" value = " 계산 " onclick = "calculate()">
+<!-- click 이벤트 처리이므로 onclick 리스너 사용 -->
+</form>
+
+</body>
+</html>

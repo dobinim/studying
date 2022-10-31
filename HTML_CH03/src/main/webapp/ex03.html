@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex03-03</title>
+</head>
+<body>
+
+<h3>details와 summary 태그</h3>
+Q &amp; A 리스트 <!-- &amp; → & 표시 엔터티 -->
+<hr/>
+
+<!-- details와 summary도 시멘틱 블록태그에 해당
+- details 태그 안에 summary 태그를 자식 엘리먼트로 사용해
+ summary 내용과 삼각형 핸들러를 보여주며, 클릭 시에 상세 내용을 보여줌 -->
+<details>
+	<summary>Question 1</summary>
+	<p>웹 개발자가 알아야 하는 언어 3 가지?</p> <!-- 이부분은 summary 부분을 클릭하기 전까지 출력되지 X -->
+</details>
+<details>
+	<summary>Answer 1</summary>
+	<p>HTML5, CSS, Javascript</p>
+</details>
+</body>
+</html>

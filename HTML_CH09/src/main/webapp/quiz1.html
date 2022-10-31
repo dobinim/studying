@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>quiz1</title>
+</head>
+<body>
+
+<h3>QUIZ</h3>
+<hr/>
+
+<p id = "demo1"></p>
+<p id = "demo2"></p>
+<p id = "demo3"></p>
+<p class = "test"></p>
+<p class = "test"></p>
+<img id = "image" src = "media/puppy.png"><br/>
+<input type = "text" id = "myText" value = "Hello"/><br/>
+<p id = "demo4">글자색글자색</p><br/>
+<button id = "demo5">Click me1</button>
+
+
+
+<script>
+// 1번 : demo1을 선택하여 내용에 hello 작성
+document.getElementById("demo1").innerHTML = "HELLO";				
+
+
+// 2번 : p태그로 선택하여 그 중 2번째 엘리먼트에 Hello2 작성
+let pTag = document.getElementsByTagName("p");
+pTag[1].innerHTML = "HELLO2";
+	// document.getElementsByTagName("p")[1].innerHTML = "HELLO2"; 로 바로 써도 됨
+
+	
+// 3번 : 클래스 test를 선택하여 첫번째 엘리먼트에 helloTest를 작성
+let classTag = document.getElementsByClassName("test");
+classTag[0].innerHTML = "helloTest";
+	// document.getElementsByClassName("test")[0].innerHTML = "hellotest"; 로 바로 써도 됨
+
+	
+// 4번 :  id = "image"를 선택하여 apple.png로 교체
+document.getElementById("image").src = "media/apple.png";
+	// document.querySelector("#image").src = "media/apple.png"; 로 해도 됨
+	
+	
+// 5번 : id = "myText"를 선택해 입력값을 Have a nice day! 로 교체
+let mytext = document.getElementById("myText");
+mytext.value = "Have a nice day!";
+	// document.getElementById("myText").value = "Have a nice day"; 해도 됨
+
+	
+// 6번 : demo4를 선택해 글자색 속성을 red로 변경
+demo4.style.color = "red";
+	// let e = document.getElementById("demo4");
+	// e.style.color = "red";	
+	// css의 속성은 style 속성을 사용하고 css의 프로퍼티 사용
+	
+	
+// 7번 : demo4를 선택해 글자의 크기를 40px로 변경
+demo4.style.fontSize = "40px";
+
+	
+// 8번 : demo5를 선택해 click이벤트를 등록해주고, 이벤트 처리 함수는 myFunction (함수는 만들지 X)
+let demo5 = document.getElementById("demo5");
+demo5.addEventListener("click", function myFunction() {
+  alert("Click!");
+});
+	// myFunction 함수 만들어주고 document.getElementById("demo5").onclick = myFunction; 해도 됨. 이때 myFunction에 () 있으면 안됨!
+	
+	
+	
+// 9번 : 태그가 p이며 클래스가 test인 모든 엘리먼트를 css의 셀렉터를 이용해 선택
+let nodelist = document.querySelectorAll("p.test"); // 태그가 p 이면서 .test 갖는 
+	for (let i = 0; i < nodelist.length; i++)
+		alert(nodelist[i].innerHTML);
+	//querySelectorAll(셀렉터)는 셀렉터에 해당하는 엘리먼트를 배열로 반환한다.
+	
+	</script>
+</body>
+</html>
+
+
+<!-- 
+1. demo1을 선택하여 내용에 hello 작성
+2. p태그로 선택하여 그 중 2번째 엘리먼트에 Hello2 작성
+3. 클래스 test를 선택하여 첫번째 엘리먼트에 helloTest를 작성
+4. id = "image"를 선택하여 apple.png로 교체
+5. id = "myText"를 선택해 입력값을 Have a nice day! 로 교체
+6. demo4를 선택해 글자색 속성을 red로 변경
+7. demo4를 선택해 글자의 크기를 40px로 변경
+8. demo5를 선택해 click이벤트를 등록해주고, 이벤트 처리 함수는 myFunction (함수는 만들지 X)
+9. 태그가 p이며 클래스가 test인 모든 엘리먼트를 css의 셀렉터를 이용해 선택
+-->

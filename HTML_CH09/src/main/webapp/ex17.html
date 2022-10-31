@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex09-17</title>
+<script>
+function findChecked() {
+	let found = null;
+	let kcity = document.getElementsByName("city");	
+	// name 속성으로 찾으면 배열 형태의 DOM 객체를 반환한다 (특히 input에서)
+	for (let i = 0; i < kcity.length ; i++) {
+		if(kcity[i].checked == true) {	
+			// checkbox나 radio의 사전 선택 속성이 checked이면 DOM의 checked는 true
+			found = kcity[i];
+		}
+	}
+	if (found != null) {
+		alert(found.value + " 이 선택되었음");
+	} else {
+		alert("선택된 것이 없음");
+	}
+}
+</script>
+</head>
+<body>
+
+<h3>버튼을 클릭하면 선택된 라디오 버튼의 value를 출력합니다.</h3>
+<hr/>
+<form>
+	<input type = "radio" name = "city" value = "seoul" checked>서울
+	<input type = "radio" name = "city" value = "busan">부산
+	<input type = "radio" name = "city" value = "chuncheon">춘천
+	<input type = "button" value = "find checked" onclick = "findChecked()">
+</form>
+</body>
+</html>

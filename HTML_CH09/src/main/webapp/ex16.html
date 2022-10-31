@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex09-16</title>
+<script>
+function checkFilled(obj) {
+	if(obj.value == "") {
+		obj.focus();	// obj에 다시 포커스
+	}
+}
+</script>
+</head>
+<body onload = "document.getElementById('name').focus();">
+<!-- js 제공 focus() 메서드는 포커스를 얻는 메서드 -->
+<h3>onfocus 와 onblur</h3>
+<hr/>
+
+<p>이름을 입력하지 않고 다른 창으로 이동할 수 없습니다.</p>
+<form>
+이름 : <input type = "text" id = "name" onblur = "checkFilled(this)"/><br/>
+<!-- onblur는 포커스를 잃을 경우 발생하는 이벤트 리스너  -->
+학번 : <input type = "text"><br/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee; 
+ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>JSPServlet08</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+	<!-- 모든 Servlet이 공통으로 사용하는 ServletContext의 속성 설정 -->
+	<context-param>
+		<param-name>id</param-name>
+		<param-value>kimkim</param-value>
+	</context-param>
+	<context-param>
+		<param-name>pw</param-name>
+		<param-value>0123456</param-value>		
+	</context-param> 
+	<!-- Servlet의 초기값을 사용하려면 mapping도 여기서 설정하고,
+	 Servlet의 @WebServlet은 사용 X ! -->
+
+	<servlet>
+		<servlet-name>ServletInitParam</servlet-name>
+		<servlet-class>com.kim.ex0801.ServletInit</servlet-class>
+		<!-- init-param : Servlet의 초기값 설정 -->
+		<init-param>
+			<param-name>id</param-name>
+			<param-value>abcdef</param-value>
+		</init-param>
+		<init-param>
+			<param-name>pw</param-name>
+			<param-value>12345</param-value>
+		</init-param>
+		<init-param>
+			<param-name>path</param-name>
+			<param-value>C:/javalec/workspace</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletInitParam</servlet-name>
+		<url-pattern>/servI</url-pattern>
+	</servlet-mapping>
+
+<!-- ServletContext의 생명주기를 감시하는 리스너 클래스 등록 -->
+<!-- 리스너 클래스에 @WebListener 사용 시에는 사용 X  -->
+<listener>
+	<listener-class>com.kim.ex0803.SvlListener</listener-class>
+</listener>
+
+
+</web-app>
+
+
+

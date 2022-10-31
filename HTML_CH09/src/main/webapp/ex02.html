@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex09-02</title>
+<script>
+let p;
+function init() {	// onload에서 호출하는 함수이므로 html 내용이 모두 로딩될 때까지 호출되지 X 
+	p = document.getElementById("p");	// p 태그 엘리먼트를 DOM으로 반환
+	p.onmouseover = over;		
+	// DOM 객체 p의 리스너속성인 onmouseover는 시작 태그의 리스너와 이름이 동일하고,
+	// 값으로는 함수가 오는데 직접 익명의 함수를 만들거나 별도로 만들어진 함수의 이름만 사용한다. (호출 시 에러)
+	p.onmouseout = out;	
+}
+
+function over() {
+	p.style.backgroundColor = "orchid";
+}
+
+function out() {
+	p.style.backgroundColor = "white";
+}
+</script>
+</head>
+<body onload = "init()"> <!-- onload 리스너는 load 이벤트를 처리하는 리스너로, 페이지가 모두 로딩 완료됐을 때 발생 -->
+
+<h3>DOM 객체의 이벤트 리스너 프로퍼티에 함수 등록</h3>
+<hr/>
+<p id = "p">마우스 올리면 orchid 색으로 변경</p>
+</body>
+</html>

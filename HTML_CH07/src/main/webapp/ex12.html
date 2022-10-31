@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex07-12</title>
+</head>
+<body>
+
+<h2>JavaScript Object Constructors(생성자)</h2>
+<hr/>
+
+<p id = "demo"></p>
+<p id = "demo1"></p>
+
+<script>
+// Person 생성자 함수
+function Person (first, last, age, eye) {
+		// 생성자는 첫글자가 "대문자"
+	// 프로퍼티 설정
+	this.firstName = first;
+	this.lastName = last;
+	this.age = age;
+	this.eyecolor = eye;
+}
+
+Person.prototype.nationality = "English";	
+// Person 생성자 함수 객체에 nationality 프로퍼티를 추가
+Person.prototype.name = function() {	// prototype을 이용해 메서드 추가도 가능
+	return this.firstName + " " + this.lastName;
+}
+
+let myFather = new Person("John", "Doe", 50, "blue");
+document.getElementById("demo").innerHTML = 
+	"The nationality of my father is " + myFather.nationality + "<br/>" + "FullName : " + myFather.name();
+const myMother = new Person("Kim", "Soon", 45, "blue");
+// 리터럴 넣는거니까 const 써도 OK
+document.getElementById("demo1").innerHTML = 
+	"The nationality of my mother is " + myMother.nationality + "<br/>" + "FullName : " + myMother.name();
+</script>
+</body>
+</html>

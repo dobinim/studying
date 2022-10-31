@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>Dialog</title>
+</head>
+<body>
+
+<h3>자바스크립트로 사용자 입력 및 대화</h3>
+<hr/>
+<div id = "result" style = "width:500px;height:500px;border:1px solid blue;"></div> <!-- 입력창 결과 출력 -->
+<script>
+var result = document.getElementById("result");
+// var : 변수 선언 키워드
+// .getElementById("id이름") 메서드는 id 명의 태그 엘리먼트를 객체화한다
+function promptEX() {
+	let ret = window.prompt("이름을 입력하세요", "황기태"); // prompt함수는 입력값을 반환
+	if(ret == null) {
+		// 취소버튼이나 다이알로그를 닫은 경우 (즉, 값을 입력하지 않은 경우)
+		result.innerHTML = "취소나 그냥 닫혔군요."
+		// innerHTML속성은 콘텐츠(내용)를 나타내는 속성
+	} else {
+		result.innerHTML = ret;
+		// ret에는 사용자가 입력한 문자열
+	}
+	
+}
+
+function confirmEX() {
+	let ret = confirm("전송할까요");  // 반환값은 확인 시 true, 취소 시 false
+	if(ret == true) {
+		result.innerHTML = "확인을 눌렀군요";
+	} else {
+		result.innerHTML = "취소나 그냥 닫았군요";
+	}
+}
+
+function alertEX() {
+	alert("클릭하였습니다."); // alert메서드는 경고 내역을 보여주며 확인 버튼만 있다.
+}
+</script>
+
+<button onclick = "promptEX()">프롬프트 다이얼로그</button>&nbsp;&nbsp;
+<!-- ONCLICK은 클릭이벤트리스너속성으로 이 버튼 클릭 시 함수 promptEX() 호출 -->
+<button onclick = "confirmEX()">확인 다이얼로그</button>
+
+
+</body>
+</html>

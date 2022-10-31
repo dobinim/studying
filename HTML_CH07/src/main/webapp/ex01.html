@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex07-01</title>
+</head>
+<body>
+
+<h3>객체 생성 및 활용</h3>
+<hr/>
+
+<script>
+// Date 객체 생성
+var today = new Date(); // Date 코어객체의 생성자를 이용해 현재 시각 정보를 나타내는 객체형 변수 today 생성
+// Date 객체의 toLocaleString() 메서드 호출(생성된 객체는 Date 코어객체의 속성, 메서드를 갖게 됨)
+// toLocaleString() 메서드는 현지의 현재 시각을 문자열로 변환하여 반환하는 메서드다
+document.write("현재 시간 : " + today.toLocaleString() + "<br/>");
+
+// String 객체 생성
+let mystr = new String("자바스크립트 공부하기"); // String 코어객체의 생성자를 이용해 객체형 변수 생성
+document.write("mystr의 내용 : " + mystr + "<br/>");
+document.write("mystr의 길이 : " + mystr.length + "<br/>");
+// String 코어 객체의 속성 length는 문자형 길이를 나타내는 속성으로 readonly 형
+/* 문자열은 new String()보다는 var str = "kokoko" 형식으로 바로 초기값을 주는 것을 권장하며, 
+초기값 없을 때에는 var str = ""; */
+</script>
+</body>
+</html>

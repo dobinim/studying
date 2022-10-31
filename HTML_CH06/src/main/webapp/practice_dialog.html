@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>Practice01</title>
+</head>
+<body>
+
+<h3>Dialog 연습</h3>
+<hr/>
+
+<div id = "result" style = "width:500px;height:300px;border:1px dotted gray;background-color:aliceblue;"></div>
+<script> 		// js는 script를 통해 불러온다
+var result = document.getElementById("result");	 // div의 엘리먼트를 객체화
+function promptEX1() {	// 함수 promptEX1() 선언 → 메모리에 저장
+	let ret = window.prompt("이름을 입력하세요", "ㅇㅇㅇ");		// 지역 함수 ret 선언 → 이 함수선언부에서만 사용 가능  / window.prompt("A") → 입력 값을 반환
+	if (ret == null) {		// 이름을 입력하지 않고 확인을 눌렀거나, 취소를 누른 경우
+		result.innerHTML = "이름을 입력하지 않았습니다."	// innerHTML → 내용을 나타내는 속성
+	} else {
+		result.innerHTML = ret; 	// 이름을 입력한 경우 그 값이 나오게 함 
+	}
+}
+
+function confirmEX1() {	// 함수 confirmEX1() 선언 → 메모리에 저장
+	let ret = confirm("전송하시겠습니까?");	// 반환 시 true, 아니면 false (boolean 타입)
+	if (ret == true) {
+		result.innerHTML = "확인되었습니다.";
+	} else {
+		result.innerHTML = "올바른 접근이 아닙니다.";
+	}
+}
+
+function alertEX1() {	// 함수 alertEX1() 선언 → 메모리에 저장
+	alert("클릭하였습니다."); // alert 메서드는 경고 내역을 보여주며, 확인 버튼만 갖고 있다.
+}
+</script>
+
+<button onclick = "promptEX1()">제출</button>&nbsp;&nbsp;
+<button onclick = "confirmEX1()">확인</button>
+</body>
+</html>  

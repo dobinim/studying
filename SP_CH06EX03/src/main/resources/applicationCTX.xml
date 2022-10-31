@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:annotation-config/>								<!-- java의 어노테이션 설정 @Configuration을 사용 -->
+	<bean class = "com.kim.ex0603.ApplicationConfig"></bean>	<!-- 어노테이션으로 만든 설정 파일 Bean을 xml에 포함시켜야됨 -->
+	<bean id = "student2" class = "com.kim.ex0603.Student">
+		<constructor-arg value = "홍길자"/>
+		<constructor-arg value = "10"/>
+		<constructor-arg>
+			<list>
+				<value>요리</value>
+				<value>줄넘기</value>
+			</list>
+		</constructor-arg>
+		<property name = "height" value = "127"/>
+		<property name = "weight" value = "30"/>
+	</bean>
+</beans>

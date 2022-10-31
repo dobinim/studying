@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex09-21</title>
+<script>
+function myFunc1() {
+	alert("전송");
+}
+
+function myFunc2() {
+	alert("취소");
+}
+</script>
+</head>
+<body>
+
+<form action = "#" onsubmit = "myFunc1()" onreset = "myFunc2()">
+<!-- onsubmit과 onreset은 form의 이벤트 -->
+	<input type = "text" name = "name" palceholder = "입력"/><br/>
+	<input type = "submit" value = "전송"/>&nbsp;&nbsp;<input type = "reset" value = "취소"/>
+</form>
+</body>
+</html>

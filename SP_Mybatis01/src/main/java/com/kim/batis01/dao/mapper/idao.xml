@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- mapper문서형식 지정 -->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<!-- root element : mapper -->
+<!-- namespace속성 : 인터페이스의 경로 및 인터페이스명 -->
+<mapper namespace="com.kim.batis01.dao.IDao">
+	
+	<!-- sql insert문을 처리하는 태그 : insert -->
+	<!-- id : 매핑할 메서드 이름 -->
+	<!-- parameterType : 자바 dao에서 전달하는 값의 데이터형. 패키지까지 포함 -->
+	<insert id="writeDao" parameterType="com.kim.batis01.dto.ContentDto">
+		<!-- sql문을 작성. DTO 멤버변수는 대소문자 구분O -->
+		INSERT INTO BATIS(MID, MWRITER, MCONTENT) 
+		VALUES(BATIS_SEQ.NEXTVAL,#{mWriter},#{mContent})
+		<!-- #{데이터클래스의 멤버변수명} -->
+	</insert>
+	
+	<!-- sql select문을 처리하는 태그 : select  -->
+	<select id = "listDao" resultType = "com.kim.batis01.dto.ContentDto">
+			<!-- 데이터를 "전달"하는 것이 아니기 때문에 parameterType 속성 X
+				→ 역으로 결과를 "받기" 때문에 resultType을 써주는 것 (resultType : 구성원소의 객체를 나타내는 클래스)
+				insert는 parameterType, select는 resultType !       -->
+				SELECT * FROM BATIS ORDER BY MID DESC
+				<!-- sql문 쓸 때 끝에 세미콜론 X !!! -->	
+	</select>
+	
+	<!-- sql delete문을 처리하는 태그 : delete -->
+	<delete id = "deleteDao" parameterType = "int">
+		DELETE FROM BATIS WHERE MID = #{mId}	
+	</delete>
+	
+	<select id = "viewDao" parameterType = "int" resultType = "com.kim.batis01.dto.ContentDto" >
+		SELECT * FROM BATIS WHERE MID = #{mId}
+	</select>
+							<!-- parameterType : 전달하는 타입 / resultType : 반환 타입 -->
+	<insert id = "writeCard" parameterType = "com.kim.batis01.dto.TicketDto">
+		INSERT INTO CARD(CONSUMERID, AMOUNT) 
+		VALUES (#{consumerId}, #{amount})
+		<!-- 이때, 데이터의 이름 → 해당 DTO 클래스에 설정한 변수이름과 일치 시켜야함! -->
+	</insert>
+	
+	<insert id = "writeTicket" parameterType = "com.kim.batis01.dto.TicketDto">
+		INSERT INTO TICKET(CONSUMERID, COUNTNUM) VALUES (#{consumerId}, #{amount})
+	</insert>
+</mapper>

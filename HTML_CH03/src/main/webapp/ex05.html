@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex03-05</title>
+</head>
+<body>
+
+<h3>로그인 폼</h3>
+<hr/>
+<!-- web form을 만들기 위해서는 form 컨테이너 안에 입력 요소들을 구현 -->
+<!-- 
+● form 안에는 기본적으로 구현되어야 하는 필요 속성이 존재함
+- action = 서버주소
+- method = 서버와의 통신방식
+- name = form 이름                                       -->
+<form action = "#" method="POST" name= "fo">
+	사용자 ID : <input type = "text" size = "15" value = ""/>
+	<!-- input은 종료 태그가 없으므로 뒤에 / 를 붙여줌 -->
+	<!-- value = "" 는 기본값이 따로 없다는 소리, 또는 입력한 값 -->
+	<!-- 크기가 15인 한줄 입력창을 생성 -->
+	비밀 번호 : <input type = "password" size = "15" value = ""/>
+	<!-- 크기가 15인 비밀번호 입력창, 입력 내용 안보임 -->
+	<input type = "submit" value = "완료"/> 
+	<!-- 입력한 내용을 서버로 요청하는 버튼, value는 버튼 이름 -->
+	<!-- input 태그는 type으로 종류를 구분하기 때문에 필수로 지정해줘야 함!
+			input은 인라인 태그임 -->
+	<!-- submit 입력을 누르면 action에 있는 서버로 입력한 값을 보냄  -->
+</form>
+
+<hr/>
+
+<form name = "sform" action = "https://search.naver.com/search.naver" method = "get"> 
+<!-- get방식은 method의 디폴트 값(기본값)으로 생략 OK. 
+	주로 보안이 필요없을 경우에 사용하며, 주소 창에 요청 내역이 보인다.  -->
+	<input name = "query" type = "text"/> <!-- 한 줄짜리 입력창 -->
+	<!-- name은 서버로 보낼 시의 속성으로, 서버에서는 이 값을 기준으로 내용을 판단한다
+		→ ?query=입력값 으로 표시됨
+		target을 따로 정해주지 않았으므로 기본값인 "_self"로 나타남 (즉, 자기 자신 윈도우로)
+		→ https://search.naver.com/search.naver?query=Elvis+presley  -->
+	<input type = "submit" value = "검색"/>
+</body>
+</html>

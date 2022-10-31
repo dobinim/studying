@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex03-06</title>
+</head>
+<body>
+
+<h3>자기 소개서 작성</h3>
+<hr/>
+
+<form action = "#" method = "POST" name = "form">
+	이름 : <input type = "text" name = "name" value="이름을 입력하세요" size = "15"/><br/>
+	암호 : <input type = "password" name = "pw" value = "비밀번호를 입력하세요" maxlength = "4"/><br/>
+	자소서 : <textarea name = "profile" cols = "20" rows = "5">이곳에 자기소개서를 작성하세요.</textarea>
+	<!-- cols와 rows는 창의 크기를 제한할 뿐, 입력 크기를 제한하지 않는다. cols → 가로로 한 창에 몇 글자 입력되는가 rows → 몇 줄까지 한 창에 입력되는가-->
+	<!-- text area는 인라인 블록레벨 -->
+	<input type = "submit" name = "submit" value = "확인"/>
+</form>
+</body>
+</html>

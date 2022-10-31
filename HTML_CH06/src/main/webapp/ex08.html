@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex06-08</title>
+</head>
+<body>
+
+<h3>산술연산</h3>
+<hr/>
+<script>
+var x = 32;
+var total = 100 + x * 2 / 4 - 3;	// 113, 계산 순서도 자바와 동일
+var div = x / 10; 	// div는 3.2 로 자바와 달리 계산 결과대로 나옴 
+var mod = x % 2; 	// x를 2로 나눈 나머지. 즉, 0
+
+document.write("x = " + x + "<br/><br/>");
+document.write("100 + x * 2 / 4 - 3 = " + total + "<br/><br/>");
+document.write("x / 10 = " + div + "<br/><br/>");
+document.write("x % 2 = " + mod + "<br/><br/>");
+</script>
+</body>
+</html>

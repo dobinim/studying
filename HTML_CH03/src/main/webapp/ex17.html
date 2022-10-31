@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex03-17</title>
+</head>
+<body>
+
+<h3>홈 제어 시스템 - 온도 조절</h3>
+<hr/>
+<form action = "#" name = "fo" method = "post">
+	지속 시간 (0.0 ~ 10.0시간) : <input type = "number" min = "0.0" max = "10.0" step = "0.5"/>
+	<!-- spin 버튼을 가진 입력창 / only 숫자만 가짐 -->
+	온도 설정 : 10&deg; <input type = "range" min = "10" max = "30" list = "temperatures"/>30&deg;
+	<!-- type = "range"는 datalist와 맵핑 가능 -->
+	<datalist id = "temperatures">
+	<!-- label 속성으로 슬라이드바에 구간 표시 / edge는 제공하는 기능, 크롬은 아직 제공 X -->
+		<option value = "12" label = "Low"></option>
+		<option value = "20" label = "Medium"></option>
+		<option value = "28" label = "High"></option>	
+	</datalist>
+	
+<br/>
+	온도 설정 : 10&deg; <input type = "range" min = "10" max = "30" list = "temperatures"/>30&deg;
+	<!-- 슬라이드로 선택한 값이 value 에 설정됨	 -->
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex09-04</title>
+<script>
+let p;
+function init() {
+	p = document.getElementById("p");
+	p.onmouseover = function() {	//DOM의 이벤트리스너 속성으로 처리하면서 익명 함수 사용
+		this.style.backgroundColor = "orchid";		
+	}
+	p.addEventListener("mouseout", function() {	// addEventListener(이벤트이름, 익명의 함수) 사용 시 익명의 함수 직접 만듬
+		this.style.backgroundColor = "white"});
+	// 이렇게 쓰면 따로 함수를 쓰지 않아도 되어 편리하기는 하나, 다른 곳에서 해당 함수를 사용할 때 
+	// 다시 선언해야 하는 불편함이 있음. 
+}
+</script>
+</head>
+<body onload = "init()">
+
+<h3>익명 함수로 이벤트 리스너 작성</h3>
+<hr/>
+<p id = "p">마우스 올리면 orchid 색으로 변경</p>
+
+</body>
+</html>

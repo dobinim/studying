@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang = "ko">
+<meta charset="UTF-8">
+<title>ex06-18</title>
+</head>
+<body>
+
+<h3>while 문으로 0에서 n까지의 합</h3>
+<hr/>
+
+<script>
+let n = prompt("0보다 큰 정수를 입력하세요", 0);
+n = parseInt(n); 	// 문자열을 숫자로 바꿔줌
+
+let i = 0, sum = 0;
+while(i <= n) {		// i가 0에서 n까지 반복됨
+	sum += i;		// i를 sum에 더함
+	i++;			// i가 1씩 증가함 → 즉, i는 1씩 증가하며 그 값이 sum에 더해짐
+}
+document.write("0에서 " + n + "까지의 합은 " + sum);
+</script>
+</body>
+</html>

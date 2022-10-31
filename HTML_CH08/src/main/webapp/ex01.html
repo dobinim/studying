@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>ex08-01</title>
+</head>
+<body>
+
+<h3>DOM 객체 p 엘리먼트의 프로퍼티, 스타일, 이벤트 리스너 구성 요소(collection과 메서드는 제외)</h3>
+<hr/>														<!-- 이벤트리스너 -->
+<p id = "firstP" style = "color:gray; background:aliceblue" onclick = "this.style.color='teal'">
+	이것은 <span style = "color:red">문장입니다.</span></p>
+<!-- p 엘리먼트에는 id속성, style속성, 이벤트리스너 속성, 컨텐트가 속해 있는데 이를 객체화한
+ p DOM은 속성 attribute를 처리하는 프로퍼티 (시작태그의 속성명으로 사용), 
+ 태그이름을 처리하는 tagName 속성, 이벤트리스너를 처리하는 리스너 속성,
+ css를 처리하는 style 속성, css의 속성을 사용하는 css스타일 속성을 지닌다 (단, -를 카멜케이스, 대문자 처리 사용) -->
+<script>
+let p = document.getElementById("firstP"); 	// getElementById메서드를 이용해 DOM 선언
+let text = "p.id = " + p.id + "\n";	// 시작태그의 id속성을 DOM 객체의 속성으로 그대로 사용
+text += "p.tagName = " + p.tagName + "\n";	// DOM의 tagName속성은 DOM의 태그이름
+text += "p.innerHTML = " + p.innerHTML + "\n"; // DOM의 컨텐츠 부분은 innerHTML 속성으로 표시
+text += "p.style.color = " + p.style.color + "\n";	
+// DOM의 style 속성은 css 스타일을 나타내는 속성. color는 css의 프로퍼티를 사용
+text += "p.onclick = " + p.onclick + "\n"; // DOM의 on으로 시작되는 속성은 시작태그의 이벤트리스너 속성을 그대로 사용
+text += "p.childElementCount = " + p.childElementCount + "\n"; // childElementCount 속성은 자식엘리먼트의 수
+text += "너비 = " + p.offsetWidth + "\n";		// width, height는 offsetWidth, offsetHeight로 사용
+text += "높이 = " + p.offsetHeight + "\n";
+alert(text);
+</script>
+</body>
+</html>
